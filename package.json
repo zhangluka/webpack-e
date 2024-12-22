@@ -10,7 +10,20 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "file-loader": "^6.2.0",
+    "postcss-loader": "^8.1.1",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1"
-  }
+  },
+  "dependencies": {
+    "css-loader": "^7.1.2",
+    "sass": "^1.83.0",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0"
+  },
+  "browserslist": [
+    "defaults",
+    "last 2 versions"
+  ]
 }
