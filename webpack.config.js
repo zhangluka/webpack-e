@@ -10,7 +10,9 @@ module.exports = {
   mode: 'production',
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    // use public path
+    // publicPath: 'www.cdn.com/xxx'
   },
   plugins: [
     new HtmlWebpackPlugin({
