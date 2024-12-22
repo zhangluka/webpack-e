@@ -1,12 +1,23 @@
 const path = require('path')
-
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
-  entry: './index.js',
+  // entry: './src/index.js',
+  entry: {
+    main: './src/index.js',
+    sub: './src/index.js'
+  },
   mode: 'production',
   output: {
-    filename: 'main.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
+    new CleanWebpackPlugin()
+  ],
   module: {
     rules: [{
       test: /\.(png|jpg|gif)$/,
