@@ -5,7 +5,7 @@ module.exports = {
   // entry: './src/index.js',
   entry: {
     main: './src/index.js',
-    sub: './src/index.js'
+    // sub: './src/index.js'
   },
   mode: 'production',
   output: {
@@ -13,6 +13,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     // use public path
     // publicPath: 'www.cdn.com/xxx'
+  },
+  devServer: {
+    static: 'dist',
+    open: true,
+    port: 8888,
+    hot: true,
   },
   plugins: [
     new HtmlWebpackPlugin({

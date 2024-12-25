@@ -1,1 +1,0 @@
-!function(){var e=document.getElementById("root"),n=document.createElement("div");n.innerHTML="bobby with webpack",e?.appendChild(n)}();
