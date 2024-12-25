@@ -7,7 +7,8 @@ module.exports = {
     main: './src/index.js',
     // sub: './src/index.js'
   },
-  mode: 'production',
+  mode: 'development',
+  devtool: false,
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
@@ -55,6 +56,12 @@ module.exports = {
         'sass-loader',
         'postcss-loader'
       ]
+    }, {
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: {
+        loader: 'babel-loader',
+      }
     }
     ]
   }

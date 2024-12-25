@@ -1,19 +1,23 @@
 // src/index.js
+import '@babel/polyfill'
 
+const arr = [
+  new Promise(() => { }),
+  new Promise(() => { }),
+  new Promise(() => { }),
+]
+arr.map(item => {
+  console.log(item);
+})
 import './style.css'
-import counter from './counter';
-import number from './number';
-
-number();
-counter();
 
 // 额外的模块HMR配置
 if (module.hot) {
   window.cmodule = module
-  module.hot.accept('./number.js', () => {
-    document.body.removeChild(document.getElementById('number'));
-    number();
-  })
+  // module.hot.accept('./number.js', () => {
+  //   document.body.removeChild(document.getElementById('number'));
+  //   number();
+  // })
 }
 
 
