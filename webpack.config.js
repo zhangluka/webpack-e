@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     main: './src/index.js',
     // sub: './src/index.js'
+    lodash: 'lodash'
   },
   mode: 'production',
   output: {
@@ -14,9 +15,14 @@ module.exports = {
     // use public path
     // publicPath: 'www.cdn.com/xxx'
   },
+  optimization: {
+    usedExports: true,
+    splitChunks: {
+      chunks: 'initial'
+    }
+  },
   devServer: {
     static: 'dist',
-    open: true,
     port: 8888,
     hot: true,
   },

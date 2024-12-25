@@ -3,6 +3,12 @@
 import './style.css'
 import counter from './counter';
 import number from './number';
+import { add } from './math'
+import _ from 'lodash'
+
+
+console.log(_.join(['bobby', 'webpack'], 'yeeee'));
+add(1, 4)
 
 number();
 counter();
