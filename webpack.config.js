@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+console.log(path.resolve(__dirname));
 module.exports = {
   // entry: './src/index.js',
   entry: {
@@ -8,7 +9,7 @@ module.exports = {
     // sub: './src/index.js'
     lodash: 'lodash'
   },
-  mode: 'production',
+  mode: 'development',
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
@@ -32,6 +33,9 @@ module.exports = {
     }),
     new CleanWebpackPlugin()
   ],
+  resolveLoader: {
+    modules: ['node_modules', './src/loaders']
+  },
   module: {
     rules: [{
       test: /\.(png|jpg|gif)$/,
@@ -61,7 +65,15 @@ module.exports = {
         'sass-loader',
         'postcss-loader'
       ]
-    }
-    ]
+    },
+    {
+      test: /\.js$/,
+      use: [{
+        loader: 'customLoader',
+        options: {
+          user: 'bobby'
+        }
+      }]
+    }]
   }
 }

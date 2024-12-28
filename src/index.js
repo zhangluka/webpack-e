@@ -40,3 +40,5 @@ btn.addEventListener('click', () => {
 })
 
 root?.appendChild(div)
+
+console.log('test for custom webpack loader');
